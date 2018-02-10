@@ -8,6 +8,7 @@ import org.jaudiotagger.audio.AudioFile;
 import org.jaudiotagger.audio.AudioFileIO;
 import org.jaudiotagger.tag.FieldKey;
 import org.jaudiotagger.tag.Tag;
+import sample.tabs.TabTable;
 
 import javax.swing.*;
 import java.io.File;
@@ -16,7 +17,7 @@ import java.util.List;
 
 public class Controller {
 
-    //...
+    //GUI-ELEMENTS
 
     @FXML
     private ComboBox cb_title;
@@ -125,7 +126,7 @@ public class Controller {
             System.out.println(f);
 
             //erstelle neues Tab
-            createNewTab(f.getName());
+            createNewTab(f);
 
             //
 
@@ -145,23 +146,10 @@ public class Controller {
     }
 
     //erstelle neues Tab
-    private void createNewTab(String title){
-        Tab t = new Tab();
-        t.setText(title);
+    private void createNewTab(File f){
+        TabTable t = new TabTable(f);
 
-        TableView tv = new TableView();
-        tv.setEditable(true);
-
-        TableColumn firstNameCol = new TableColumn("File Name");
-        TableColumn lastNameCol = new TableColumn("Title");
-        TableColumn emailCol = new TableColumn("Artist");
-
-        tv.getColumns().addAll(firstNameCol, lastNameCol, emailCol);
-
-        HBox hbox = new HBox();
-        hbox.getChildren().add(tv);
-        hbox.setHgrow(tv, Priority.ALWAYS);
-        t.setContent(hbox);
+        t.addData2();
 
         tabpane.getTabs().add(t);
     }
