@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <HBox fillHeight="false" VBox.vgrow="NEVER">
+         <children>
+            <MenuBar HBox.hgrow="ALWAYS">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="menu_file_openDir" mnemonicParsing="false" onAction="#openDir" text="Open Dir" />
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </HBox>
+      <HBox VBox.vgrow="NEVER">
+         <children>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+              <items>
+                <Button fx:id="b0" mnemonicParsing="false" onAction="#b0_click" text="Button" />
+              </items>
+            </ToolBar>
+         </children>
+      </HBox>
+      <SplitPane dividerPositions="0.25346687211093993" prefHeight="160.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <items>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label text="Title:" />
+                        <ComboBox fx:id="cb_title" editable="true" maxWidth="1.7976931348623157E308" />
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="Artist:" />
+                        <ComboBox fx:id="cb_artist" editable="true" maxWidth="1.7976931348623157E308" />
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="Album:" />
+                        <ComboBox fx:id="cb_album" editable="true" maxWidth="1.7976931348623157E308" />
+                     </children>
+                  </VBox>
+                  <HBox spacing="10.0">
+                     <children>
+                        <VBox maxWidth="80.0" minWidth="80.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="Year:" />
+                              <ComboBox fx:id="cb_year" editable="true" maxWidth="1.7976931348623157E308" />
+                           </children>
+                        </VBox>
+                        <VBox maxWidth="85.0" minWidth="85.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="Disk:" />
+                              <ComboBox fx:id="cb_disk" editable="true" maxWidth="1.7976931348623157E308" />
+                           </children>
+                        </VBox>
+                        <VBox minWidth="120.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="Track:" />
+                              <ComboBox fx:id="cb_track" editable="true" maxWidth="1.7976931348623157E308" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox>
+                     <children>
+                        <Label text="Comment:" />
+                        <ComboBox fx:id="cb_comment" editable="true" maxWidth="1.7976931348623157E308" />
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="Directory:" />
+                        <ComboBox fx:id="cb_dir" editable="true" maxWidth="1.7976931348623157E308" />
+                     </children>
+                  </VBox>
+                  <Separator>
+                     <VBox.margin>
+                        <Insets top="7.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <VBox>
+                     <children>
+                        <Label text="Album Artist:" />
+                        <ComboBox fx:id="cb_albumartist" editable="true" maxWidth="1.7976931348623157E308" />
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="Composer:" />
+                        <ComboBox fx:id="cb_composer" editable="true" maxWidth="1.7976931348623157E308" />
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="Genre:" />
+                        <ComboBox fx:id="cb_genre" editable="true" maxWidth="1.7976931348623157E308" />
+                     </children>
+                  </VBox>
+                  <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                        <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <TabPane fx:id="tabpane" tabClosingPolicy="ALL_TABS" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TabPane>
+               </children>
+            </VBox>
+         </items>
+      </SplitPane>
+      <HBox alignment="BASELINE_LEFT" prefHeight="20.0" spacing="10.0" VBox.vgrow="NEVER">
+         <children>
+            <Label text="Ready for Work!">
+               <HBox.margin>
+                  <Insets top="1.0" />
+               </HBox.margin>
+            </Label>
+            <ProgressIndicator progress="0.55">
+               <HBox.margin>
+                  <Insets bottom="2.0" />
+               </HBox.margin>
+            </ProgressIndicator>
+         </children>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>
