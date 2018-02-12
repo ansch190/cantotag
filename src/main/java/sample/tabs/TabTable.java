@@ -1,14 +1,15 @@
 package sample.tabs;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.Node;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
+import sample.Controller;
+import sample.Main;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -158,13 +159,35 @@ public class TabTable extends Tab {
         tv.getColumns().addAll(tableColumns);
     }
 
+    private ObservableList selectedItems = null;
+
+    //init TableViewRows
+    private void initTableViewRows(){
+        tv.getSelectionModel().setCellSelectionEnabled(false);
+        tv.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
+        selectedItems = tv.getSelectionModel().getSelectedItems();
+
+        selectedItems.addListener((ListChangeListener) c -> {
+//            System.out.println("Selected Items Size: " + selectedItems.size());
+//            for(Object o : selectedItems){
+//                System.out.println("Selected Item: " + o);
+//            }
+            //Was machen wenn mehrere Dateien angewählt werden?
+            Main.myControllerHandle.setTagInfo(selectedItems);
+        });
+
+    }
+
     //init TableView
     private void initTableView(){
         tv = new TableView();
-        tv.setEditable(true);
+        tv.setEditable(false);
         tv.setColumnResizePolicy(TableView.UNCONSTRAINED_RESIZE_POLICY);
 
         initTableViewColumns();
+
+        initTableViewRows();
 
         HBox hbox = new HBox();
         hbox.getChildren().add(tv);
@@ -199,6 +222,10 @@ public class TabTable extends Tab {
         }
 
         tv.setItems(musicFiles);
+    }
+
+    public void update(){
+        tv.refresh();
     }
 
 }

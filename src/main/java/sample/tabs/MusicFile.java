@@ -60,6 +60,10 @@ public class MusicFile {
         readTags();
     }
 
+    public void update(){
+        readTags();
+    }
+
     private void readTags(){
         System.out.println(file.getName());
         try{
@@ -114,6 +118,11 @@ public class MusicFile {
     }
 
     //### GET ###
+
+    public File getFile(){
+        return this.file;
+    }
+
 
     public String getFilename(){
         return this.filename.get();

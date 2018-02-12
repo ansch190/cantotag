@@ -1,17 +1,26 @@
-Ideen für den weiteren Ausbau.
+Ideen:
 
-- Tabs für einzelne Ordner mit Musik Files,
-- Rekursives einlesen von Unterordnern.
 - Konverter zwischen Dateiname & Tags
-
 - Speichern der Sitzung, wie bei Vivaldi (Achtung Serververbindung!)
 
-- Prüfen wie das mit der Tabelle funktioniert und ob geänderte bzw. neu erstellte Tags mit MP3Tag kompatibel sind.
+- Historie für erledigte Aufgaben
+- Str-Z für Rückgängig machen von Aufgaben
 
+Aufgaben:
 
-
+- Speichern & Lesen der Disk/Track korrigieren
+- Scrollbar(vertikal) für die Comboboxen.
 
 Versionshistorie:
+
+v0.0.2
+
+- Rekursives einlesen von Ordnern
+- Filtern von nicht Audiodateien
+- Tabelle mit Tags wird dargestellt und aktualisiert.
+- Erstellen von neuen Tabs möglich
+- Bearbeitung von Einzel sowie Multiplen Files möglich
+    - Achtung Bug bei Änderung der Disknummer
 
 v0.0.1
 
