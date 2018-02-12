@@ -1,6 +1,6 @@
 # CantoTag
 
-Die ist ein ID3-Tag Editor geschrieben in Java zur
+ist ein ID3-Tag Editor geschrieben in Java zur
 platformübergreifenden einfachen Bearbeitung von Metainformationen
 in Audiodateien.
 
